@@ -1,0 +1,38 @@
+UNRELEASED BOOKS - preview copy
+===============================
+
+Thanks for taking a look. This folder contains the complete website:
+two books, their detail pages, and the full design.
+
+OPEN IT ON WINDOWS
+------------------
+1. Double-click START-HERE-WINDOWS.bat
+2. Your browser opens at http://localhost:8000
+3. Keep the black window open while you browse. Close it when you are done.
+
+OPEN IT ON MAC OR LINUX
+-----------------------
+1. Open Terminal in this folder.
+2. Run: sh START-HERE-MAC-LINUX.sh
+3. Your browser opens automatically.
+
+If you double-click index.html instead, the site still works, but the
+custom fonts may fall back to system fonts. The launcher gives you the
+real thing, with the correct fonts and icons.
+
+ABOUT THE CHECKOUT
+------------------
+The storefront is finished, but payments are not connected in this copy.
+The checkout button shows "Checkout is not connected yet" on purpose.
+No payment can be taken and nothing is charged.
+
+WHAT IS INSIDE
+--------------
+- index.html ......... the main storefront
+- pages/curtain.html . Book I detail page
+- pages/shadow.html .. Book II detail page
+- pages/refund.html, privacy.html, terms.html
+- preview/ ........... a 20-second recording of the motion design
+- README.md .......... notes for whoever maintains the site
+
+Questions? hello@unreleasedbooks.com
