@@ -34,6 +34,19 @@ For a real link, upload the folder to any static host:
 - **Netlify Drop** — drag the unzipped folder onto <https://app.netlify.com/drop>. No account is needed for the temporary URL; claim the site to keep it.
 - **Cloudflare Pages**, **GitHub Pages** or **Vercel** — connect the folder or a repository, no build command, publish directory `/`.
 
+#### GitHub Pages checklist
+
+GitHub Pages is case-sensitive and serves exactly what is in the configured folder. The most common mistakes are uploading the folder itself (creating `unreleased-books/index.html`) or leaving `css/`, `js/` and `assets/` out of the repository.
+
+1. The repository root must contain `index.html` **next to** `css/`, `js/`, `assets/` and `pages/` — not inside a subfolder.
+2. Upload the **contents** of `unreleased-books/`, not the folder itself.
+3. Keep `.nojekyll` at the root (it is included) so GitHub Pages serves the files as-is.
+4. Settings → Pages → Build and deployment → Source: **Deploy from a branch** → branch `main`, folder **/ (root)**. If it is set to `/docs`, either move the files into `docs/` or change it to the root.
+5. If Pages is configured to publish from a `gh-pages` branch, push the same files there or switch the source to `main`.
+6. Wait for the Pages deployment to finish, then hard-refresh (`Ctrl+Shift+R`).
+
+Quick test: open `https://<user>.github.io/<repo>/css/styles.css`. If that 404s, the CSS was not deployed and the page will render unstyled.
+
 Before sharing publicly, complete the launch checklist below (checkout links, email endpoint, real domain, legal review).
 
 ## Structure

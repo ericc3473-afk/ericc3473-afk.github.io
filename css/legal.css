@@ -1,0 +1,44 @@
+/* ---------- legal pages ---------- */
+.legal-main{position:relative;background:var(--paper);color:var(--ink);overflow:hidden}
+.legal-main::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.12;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.legal-wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 var(--pad)}
+.legal-hero{padding:clamp(3.5rem,8vw,6rem) 0 2.2rem;border-bottom:1px solid rgba(27,20,24,.16)}
+.legal-hero .label{color:var(--crimson)}
+.legal-hero .label span{color:#8a7c78}
+.legal-hero h1{font:650 clamp(2.7rem,7vw,5rem)/.98 var(--serif);letter-spacing:-.02em;color:var(--ink);margin:1.1rem 0 1rem;text-wrap:balance;text-shadow:0 1px 0 rgba(255,255,255,.5),0 2px 8px rgba(27,20,24,.1)}
+.legal-hero h1 em{font-style:italic;color:var(--crimson)}
+.legal-updated{font:600 .58rem/1.6 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#6f625f}
+.legal-body{padding:2.4rem 0 clamp(4rem,8vw,6rem);font-size:.98rem;color:#3d3236}
+.legal-body h2{font:650 1.65rem/1.15 var(--serif);letter-spacing:-.01em;color:var(--ink);margin:2.4rem 0 .7rem;text-shadow:0 1px 0 rgba(255,255,255,.5)}
+.legal-body h2:first-of-type{margin-top:0}
+.legal-body h3{font:700 .96rem/1.4 var(--sans);color:var(--ink);margin:1.5rem 0 .4rem}
+.legal-body p{margin:0 0 1rem}
+.legal-body ul{margin:0 0 1rem;padding-left:1.2rem;list-style:disc}
+.legal-body li{margin-bottom:.45rem;padding-left:.2rem}
+.legal-body li::marker{color:var(--crimson)}
+.legal-body a{color:var(--crimson);text-decoration:underline;text-underline-offset:3px}
+.legal-body a:hover{color:var(--crimson-2)}
+.legal-notice{margin:0 0 2rem;padding:1rem 1.1rem;border-left:3px solid var(--crimson);background:rgba(125,16,48,.06);color:var(--ink);font-size:.86rem;line-height:1.65}
+.legal-notice strong{display:block;font:600 .56rem/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--crimson);margin-bottom:.35rem}
+.legal-contact{margin-top:2.5rem;padding:1.3rem 1.4rem;border:1px solid rgba(27,20,24,.18);background:rgba(255,255,255,.35)}
+.legal-contact p:last-child{margin-bottom:0}
+.legal-page .header-actions .btn{white-space:nowrap}
+.legal-page .footer{margin-top:0}
+
+/* ---------- post-checkout page ---------- */
+.thanks-steps{display:grid;gap:1rem;margin:1.5rem 0 2rem;padding:0;list-style:none;counter-reset:step}
+.thanks-steps li{position:relative;padding:1.1rem 1.2rem 1.1rem 3.4rem;border:1px solid rgba(27,20,24,.16);background:rgba(255,255,255,.35);counter-increment:step}
+.thanks-steps li::before{content:counter(step,decimal-leading-zero);position:absolute;left:1.15rem;top:1.15rem;font:600 .62rem/1 var(--mono);letter-spacing:.1em;color:var(--crimson)}
+.thanks-steps strong{display:block;font:700 .95rem/1.4 var(--sans);color:var(--ink);margin-bottom:.25rem}
+.thanks-steps p{font-size:.85rem;color:#3d3236;margin:0}
+.thanks-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.thanks-actions .btn{min-height:44px}
+
+@media(max-width:560px){
+  .legal-page .header{grid-template-columns:1fr auto}
+  .legal-page .nav{display:none}
+  .legal-page .header-actions{grid-column:2}
+  .legal-page .header-actions .btn{padding:.6rem .8rem;font-size:.5rem}
+  .legal-hero{padding-top:2.8rem}
+}
