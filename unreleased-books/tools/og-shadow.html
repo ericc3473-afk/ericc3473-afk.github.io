@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OG — The Shadow of the Higher Order</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#08060a;color:#f2ecee;font-family:'Manrope',system-ui,sans-serif}
+  .canvas{position:relative;width:1200px;height:630px;padding:64px 68px;display:grid;grid-template-columns:1fr 340px;gap:54px;align-items:center;background:
+    radial-gradient(60% 90% at 8% 12%,rgba(125,16,48,.34),transparent 68%),
+    radial-gradient(50% 80% at 92% 10%,rgba(201,164,92,.14),transparent 70%),
+    linear-gradient(120deg,#0d0a11 0%,#08060a 62%)}
+  .canvas::after{content:"";position:absolute;inset:26px;border:1px solid rgba(201,164,92,.28);pointer-events:none}
+  .label{display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#c9a45c;margin-bottom:26px}
+  .label::before{content:"";width:34px;height:1px;background:#c9a45c}
+  h1{font-family:'Bodoni Moda',Georgia,serif;font-weight:650;font-size:72px;line-height:.94;letter-spacing:-.025em;margin:0 0 22px;color:#fbf5ea;text-shadow:0 6px 40px rgba(0,0,0,.55)}
+  h1 em{font-style:italic;color:#ead49a}
+  .byline{font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#c9a45c;margin-bottom:22px}
+  .byline span{color:#bdb2b7}
+  .lede{font-size:19px;line-height:1.55;color:#c9bec3;max-width:560px;margin:0 0 34px}
+  .meta{display:flex;align-items:center;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#bdb2b7;border-top:1px solid rgba(201,164,92,.28);padding-top:22px}
+  .price{font-family:'Bodoni Moda',Georgia,serif;font-size:34px;letter-spacing:0;color:#fff}
+  .dot{width:4px;height:4px;background:#c9a45c;transform:rotate(45deg)}
+  .cover{position:relative;justify-self:center;width:300px;box-shadow:0 40px 80px rgba(0,0,0,.65),0 0 0 1px rgba(201,164,92,.18)}
+  .cover img{display:block;width:100%;height:auto}
+  .cover::before{content:"";position:absolute;inset:-26px;background:radial-gradient(circle,rgba(125,16,48,.4),transparent 66%);filter:blur(24px);z-index:-1}
+  .url{position:absolute;left:68px;bottom:38px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#8f8388}
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div>
+    <p class="label">Unreleased Books · Book II</p>
+    <h1>The Shadow of the <em>Higher</em> Order</h1>
+    <p class="byline">by <span>Elias Morgan</span> · PDF eBook</p>
+    <p class="lede">A study of the circles that decide who enters, who waits outside and what belonging costs.</p>
+    <div class="meta"><span class="price">$7.95</span><span class="dot"></span><span>Instant download</span><span class="dot"></span><span>DRM-free</span></div>
+  </div>
+  <div class="cover"><img src="../assets/shadow.png" alt=""></div>
+  <p class="url">unreleasedbooks.com</p>
+</div>
+</body>
+</html>
