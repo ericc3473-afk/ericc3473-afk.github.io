@@ -52,9 +52,11 @@ The checkout stays in its honest "not connected" state, so a friend can read eve
 ├── tools/
 │   ├── cover.html          # Source artwork for assets/cover.jpg
 │   ├── og.html             # Source template for assets/og.jpg
-│   └── icon.html           # Source template for the app icons
+│   ├── icon.html           # Source template for the app icons
+│   └── backdrop-source.jpg # Original torn-paper poster the hero band is cut from
 ├── assets/
 │   ├── cover.jpg           # The cover, 1200 × 1800 (~170 KB)
+│   ├── backdrop.jpg        # Torn-paper reveal under the title, 1600 × 400 (~52 KB)
 │   ├── og.jpg              # Social card, 1200 × 630
 │   ├── icon-192.png
 │   ├── icon-512.png
@@ -110,13 +112,15 @@ Both are self-hosted in `assets/fonts/` (latin subset) and loaded through `css/f
 
 The page is built as a sequence of printed leaves:
 
-1. **Title page** — full-height, the title above, a scroll cue.
+1. **Title page** — full-height, the title above, a scroll cue, closing on a torn-paper reveal.
 2. **The book** — the cover on the right, title, author and the opening description on the left; the cover stays in view as the copy scrolls.
 3. **The author** — a short bio under a gold monogram.
 4. **Inside, you'll discover** — the five promises as a ruled list, with the pull quote and closing line beside it.
 5. **Buy** — price, one button, and an honest note about the state of checkout.
 
 The cover is authored as SVG in `tools/cover.html`: an engraved rosette, gilt frame, corner flourishes and Didone lettering, rasterised to `assets/cover.jpg`.
+
+The title page ends in a torn-paper reveal (`assets/backdrop.jpg`). It is cut from the supplied poster in `tools/backdrop-source.jpg` — the torn-slit band only, excluding the poster's own headline so it never competes with the book title. The band is padded to 1600 × 400 on `--ground` and its side seams are feathered. In CSS the image is masked at the top edge so it dissolves into the page instead of sitting on a hard line; the bottom fades into the book section.
 
 ## Motion
 
@@ -167,4 +171,4 @@ It adds `motion-full` to `<html>` and disables the reduced-motion stylesheet. `?
 - The cover in `assets/` is custom artwork created for this build. Replace it with the final cover at the same 2:3 ratio if needed, then regenerate `assets/og.jpg`.
 - The price shown is `$16.95` for the PDF eBook, set in both `js/config.js` and the visible markup.
 - The checkout fallback is deliberate until a real provider link exists; everything else is front-end complete.
-- Local CSS and JS are linked with `?v=2026-11-01a`. Bump that token whenever you deploy a change.
+- Local CSS and JS are linked with `?v=2026-11-02a`. Bump that token whenever you deploy a change.
