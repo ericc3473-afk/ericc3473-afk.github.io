@@ -1,15 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Icon</title>
+<title>Icon — The Gilded Code</title>
 <style>
-  html,body{margin:0;width:512px;height:512px;overflow:hidden;background:#08060a}
-  .wrap{width:512px;height:512px;display:grid;place-items:center;background:radial-gradient(circle at 50% 38%,#1c0d15,#08060a 72%)}
-  .mark{position:relative;width:340px;height:340px;border:2px solid #c9a45c;display:grid;place-items:center;color:#ead49a;font-family:Georgia,'Times New Roman',serif;font-size:168px;line-height:1;letter-spacing:.01em}
-  .mark::after{content:"";position:absolute;inset:16px;border:1px solid rgba(201,164,92,.35)}
-  .mark span{transform:translateY(-4px)}
+  @font-face {
+    font-family: 'Bodoni Moda';
+    font-style: normal;
+    font-weight: 400 900;
+    font-display: block;
+    src: url(../assets/fonts/bodoni-moda-400-900-normal-latin.woff2) format('woff2');
+  }
+  html, body { margin: 0; padding: 0; background: #0c0a08; }
+  svg { display: block; }
+  .didone { font-family: 'Bodoni Moda', Georgia, serif; }
 </style>
 </head>
-<body><div class="wrap"><div class="mark"><span>UB</span></div></div></body>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="The Gilded Code">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="42%" r="72%">
+      <stop offset="0%" stop-color="#1d1812"/>
+      <stop offset="70%" stop-color="#12100b"/>
+      <stop offset="100%" stop-color="#0a0806"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8a6a2f"/>
+      <stop offset="30%" stop-color="#e2c98a"/>
+      <stop offset="62%" stop-color="#c2a058"/>
+      <stop offset="100%" stop-color="#7d6029"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#g)"/>
+  <rect x="30" y="30" width="452" height="452" rx="74" fill="none" stroke="url(#gold)" stroke-width="3"/>
+  <rect x="44" y="44" width="424" height="424" rx="64" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.6"/>
+  <text class="didone" x="256" y="352" text-anchor="middle" font-size="290" font-weight="500" fill="url(#gold)">G</text>
+</svg>
+</body>
 </html>

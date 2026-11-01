@@ -1,8 +1,8 @@
-UNRELEASED BOOKS - preview copy
-===============================
+THE GILDED CODE - preview copy
+==============================
 
-Thanks for taking a look. This folder contains the complete website:
-two books, their detail pages, and the full design.
+Thanks for taking a look. This folder contains the complete website for
+The Gilded Code: Abundance by Design by Kael Varnow.
 
 OPEN IT ON WINDOWS
 ------------------
@@ -23,16 +23,15 @@ real thing, with the correct fonts and icons.
 ABOUT THE CHECKOUT
 ------------------
 The storefront is finished, but payments are not connected in this copy.
-The checkout button shows "Checkout is not connected yet" on purpose.
+The buy button shows "Checkout is not connected yet" on purpose.
 No payment can be taken and nothing is charged.
 
 WHAT IS INSIDE
 --------------
-- index.html ......... the main storefront
-- pages/curtain.html . Book I detail page
-- pages/shadow.html .. Book II detail page
+- index.html ......... the whole storefront (title page, book, author,
+                       what's inside, and the buy section)
 - pages/refund.html, privacy.html, terms.html
-- preview/ ........... a 20-second recording of the motion design
+- assets/cover.jpg ... the cover artwork
 - README.md .......... notes for whoever maintains the site
 
-Questions? hello@unreleasedbooks.com
+Questions? hello@thegildedcode.com

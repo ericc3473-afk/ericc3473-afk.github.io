@@ -1,166 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — Unreleased Books</title>
-<meta name="description" content="How Unreleased Books handles personal information and local cart data.">
-<meta name="theme-color" content="#08060a">
+<title>Privacy — The Gilded Code</title>
+<meta name="description" content="How The Gilded Code handles your information.">
+<link rel="canonical" href="https://ericc3473-afk.github.io/pages/privacy.html">
+<meta name="theme-color" content="#0b0906">
+<meta name="color-scheme" content="dark">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-<link rel="manifest" href="../manifest.webmanifest">
-<link rel="canonical" href="https://unreleasedbooks.com/pages/privacy.html">
-<link rel="preload" href="../assets/fonts/bodoni-moda-400-900-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../assets/fonts/manrope-200-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../css/fonts.css?v=2026-10-30e">
-<link rel="stylesheet" href="../css/styles.css?v=2026-10-30e">
-<link rel="stylesheet" href="../css/legal.css?v=2026-10-30e">
-<link rel="stylesheet" href="../css/motion.css?v=2026-10-30e">
-<link rel="stylesheet" href="../css/motion-reduce.css?v=2026-10-30e" media="(prefers-reduced-motion: reduce)" id="motionReduce">
-<script>
-/* js flag + ?motion=full preview switch for the motion layer */
-(function () {
-  var d = document.documentElement, s = location.search;
-  d.classList.add('js');
-  try {
-    if (/[?&]motion=(off|auto)\b/.test(s)) sessionStorage.removeItem('ub-motion');
-    else if (/[?&]motion=full\b/.test(s)) sessionStorage.setItem('ub-motion', 'full');
-    if (sessionStorage.getItem('ub-motion') === 'full') {
-      d.classList.add('motion-full');
-      var l = document.getElementById('motionReduce');
-      if (l) l.media = 'not all';
-    }
-  } catch (e) {}
-})();
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://unreleasedbooks.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Privacy policy", "item": "https://unreleasedbooks.com/pages/privacy.html" }
-  ]
-}
-</script>
+<link rel="stylesheet" href="../css/fonts.css?v=2026-11-01a">
+<link rel="stylesheet" href="../css/styles.css?v=2026-11-01a">
 </head>
-<body class="legal-page">
+<body>
 <a class="skip" href="#main">Skip to content</a>
-
-<header class="header">
-  <a class="brand" href="../index.html">
-    <span class="brand-mark" aria-hidden="true">UB</span>
-    <span class="brand-word"><b>Unreleased</b><small>Books</small></span>
-  </a>
-  <nav class="nav" aria-label="Primary">
-    <a href="../index.html#inside">Inside</a>
-    <a href="../index.html#collection">Collection</a>
-    <a href="../index.html#faq">FAQ</a>
-  </nav>
-  <div class="header-actions">
-    <a class="btn btn-line btn-sm" href="../index.html#top">Back to the book</a>
-  </div>
+<header class="site-head">
+  <a class="brand" href="../index.html">The Gilded Code</a>
+  <a class="head-cta" href="../index.html#buy">Get the book</a>
 </header>
+<main id="main" class="legal">
+  <div class="narrow">
+    <h1>Privacy</h1>
+    <p class="updated">Last updated November 2026</p>
 
-<main id="main" class="legal-main">
-  <div class="legal-wrap">
-    <header class="legal-hero">
-      <p class="label"><span>Legal</span> Privacy</p>
-      <h1>Privacy <em>policy.</em></h1>
-      <p class="legal-updated">Last updated: 29 October 2026</p>
-    </header>
+    <h2>What this site collects</h2>
+    <p>This is a static site. It does not set advertising cookies, run third-party analytics, or build a profile of you as you read.</p>
 
-    <div class="legal-body">
-      <div class="legal-notice">
-        <strong>Pre-launch notice</strong>
-        Checkout is not live yet. No payment can be taken through this site. This policy describes how we will handle information when orders open.
-      </div>
+    <h2>Payments</h2>
+    <p>When checkout is connected, payment is handled by a third-party provider such as Stripe, Lemon Squeezy or Gumroad. Your card details go to that provider directly and are never stored on this site. The provider’s own privacy policy applies to that transaction.</p>
 
-      <h2>Who we are</h2>
-      <p>Unreleased Books is an independent digital publisher. For privacy questions, contact <a href="mailto:hello@unreleasedbooks.com">hello@unreleasedbooks.com</a>.</p>
+    <h2>Email</h2>
+    <p>If you email <a href="mailto:hello@thegildedcode.com" data-mailto data-mailtext>hello@thegildedcode.com</a>, your address and message are used only to answer you and to deliver what you asked for. They are not sold or added to a marketing list without your agreement.</p>
 
-      <h2>Information we collect</h2>
-      <p>We aim to collect only what we need to sell and deliver a digital book:</p>
-      <ul>
-        <li><strong>Order details:</strong> your name, email address, billing details and the titles you purchased.</li>
-        <li><strong>Payment information:</strong> handled by our payment provider. We do not store full card numbers on this site.</li>
-        <li><strong>Support messages:</strong> the content of emails you send us and our replies.</li>
-        <li><strong>Technical data:</strong> basic server logs such as IP address, browser type and pages requested, used for security and reliability.</li>
-        <li><strong>Local cart data:</strong> your cart is stored in your browser using localStorage so it survives a page refresh.</li>
-      </ul>
+    <h2>Hosting</h2>
+    <p>The site is served by GitHub Pages. GitHub may record standard server logs, such as IP address and requested page, as part of operating the service.</p>
 
-      <h2>How we use information</h2>
-      <ul>
-        <li>to process orders, deliver download links and provide support;</li>
-        <li>to prevent fraud, abuse and unauthorised access;</li>
-        <li>to meet accounting, tax and legal obligations;</li>
-        <li>to improve the site and understand which pages are useful.</li>
-      </ul>
+    <h2>Your rights</h2>
+    <p>You can ask what personal information is held about you, ask for a copy, or ask for it to be deleted. Write to the address above and it will be handled.</p>
 
-      <h2>Cookies and local storage</h2>
-      <p>This site uses localStorage to remember your cart. It is not used for advertising. If we add analytics or marketing cookies later, we will update this policy and ask for consent where required.</p>
+    <h2>Contact</h2>
+    <p>Questions about this page: <a href="mailto:hello@thegildedcode.com" data-mailto data-mailtext>hello@thegildedcode.com</a>.</p>
 
-      <h2>Sharing</h2>
-      <p>We share information only with service providers that help us run the store, such as payment processing, email delivery and hosting providers. They may process information on our behalf and are expected to protect it. We do not sell personal information.</p>
-
-      <h2>Retention</h2>
-      <p>We keep order and tax records for as long as required by law. Support emails are kept only as long as needed to resolve the issue and maintain a record of the conversation. Cart data stays in your browser until you clear it.</p>
-
-      <h2>Your rights</h2>
-      <p>Depending on where you live, you may have the right to access, correct, delete or restrict the use of your personal information, or to object to certain processing. You may also have the right to data portability and to complain to a data protection authority. To make a request, email us.</p>
-
-      <h2>International transfers</h2>
-      <p>Our service providers may process information in countries other than yours. Where required, we use appropriate safeguards for those transfers.</p>
-
-      <h2>Children</h2>
-      <p>The store is intended for adults. We do not knowingly collect personal information from children. If you believe a child has provided information, contact us and we will remove it.</p>
-
-      <h2>Changes</h2>
-      <p>We may update this policy as the store develops. The date at the top shows when it was last revised. Material changes will be announced on this page.</p>
-
-      <div class="legal-contact">
-        <p><strong>Privacy questions</strong></p>
-        <p>Email <a href="mailto:hello@unreleasedbooks.com">hello@unreleasedbooks.com</a>. We reply within 1–2 business days.</p>
-      </div>
-    </div>
+    <a class="back" href="../index.html">← Back to the book</a>
   </div>
 </main>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a class="brand" href="../index.html">
-        <span class="brand-mark" aria-hidden="true">UB</span>
-        <span class="brand-word"><b>Unreleased</b><small>Books</small></span>
-      </a>
-      <p>Books you were never supposed to find.</p>
-      <p class="footer-small">Independent digital publisher. Instant PDF delivery.</p>
-    </div>
-    <nav class="footer-col" aria-label="The book">
-      <h3>The book</h3>
-      <a href="../index.html#inside">Inside the book</a>
-      <a href="../index.html#collection">Collection</a>
-      <a href="../index.html#faq">FAQ</a>
-    </nav>
-    <nav class="footer-col" aria-label="Legal">
-      <h3>Legal</h3>
-      <a href="refund.html">Refund policy</a>
-      <a href="privacy.html" aria-current="page">Privacy</a>
-      <a href="terms.html">Terms</a>
-    </nav>
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <a href="mailto:hello@unreleasedbooks.com">hello@unreleasedbooks.com</a>
-      <p>We reply within 1–2 business days.</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Unreleased Books. All rights reserved.</p>
-    <p>Secure checkout · Instant PDF delivery</p>
-    <a href="#main">Back to top ↑</a>
-  </div>
-</footer>
-<script src="../js/motion.js?v=2026-10-30e"></script>
+<script src="../js/config.js?v=2026-11-01a"></script>
+<script src="../js/app.js?v=2026-11-01a"></script>
 </body>
 </html>

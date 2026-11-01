@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OG — The Gilded Code</title>
+<style>
+  @font-face {
+    font-family: 'Bodoni Moda';
+    font-style: normal;
+    font-weight: 400 900;
+    font-display: block;
+    src: url(../assets/fonts/bodoni-moda-400-900-normal-latin.woff2) format('woff2');
+  }
+  html, body { margin: 0; padding: 0; background: #0c0a08; }
+  svg { display: block; }
+  .didone { font-family: 'Bodoni Moda', Georgia, serif; }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="The Gilded Code by Kael Varnow">
+  <defs>
+    <radialGradient id="g" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1c1813"/>
+      <stop offset="60%" stop-color="#12100b"/>
+      <stop offset="100%" stop-color="#0a0806"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8a6a2f"/>
+      <stop offset="30%" stop-color="#e2c98a"/>
+      <stop offset="60%" stop-color="#c2a058"/>
+      <stop offset="100%" stop-color="#7d6029"/>
+    </linearGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <filter id="shade" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect width="1200" height="630" filter="url(#grain)" opacity="0.09" style="mix-blend-mode:overlay"/>
+
+  <rect x="26" y="26" width="1148" height="578" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.45"/>
+
+  <g class="didone" fill="#f4ecdd">
+    <text x="86" y="250" font-size="92" letter-spacing="4" font-weight="500">THE GILDED</text>
+    <text x="86" y="352" font-size="92" letter-spacing="4" font-weight="500">CODE</text>
+  </g>
+  <text class="didone" x="90" y="412" font-size="25" letter-spacing="9" fill="#c8a55c" font-weight="500">ABUNDANCE BY DESIGN</text>
+
+  <g stroke="url(#gold)" fill="none" stroke-width="1.1" opacity="0.85">
+    <path d="M88 462 H300"/>
+  </g>
+  <text class="didone" x="88" y="512" font-size="24" letter-spacing="7" fill="#d8c79f" font-weight="500">KAEL VARNOW</text>
+
+  <image href="../assets/cover.jpg" x="812" y="72" width="316" height="474" filter="url(#shade)"/>
+</svg>
+</body>
+</html>

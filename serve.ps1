@@ -1,5 +1,5 @@
 # ============================================================
-#  Unreleased Books - local preview server
+#  The Gilded Code - local preview server
 #  Starts a tiny web server for this folder and opens it in
 #  your browser. No installs, no admin rights, no Python.
 #  Keep this window open while you browse. Ctrl+C stops it.

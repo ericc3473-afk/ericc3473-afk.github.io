@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Unreleased Books - local preview for macOS and Linux.
+# The Gilded Code - local preview for macOS and Linux.
 # Requires Python 3 (already installed on most macOS and Linux systems).
 cd "$(dirname "$0")" || exit 1
 
@@ -20,7 +20,7 @@ else
 fi
 
 echo ""
-echo "  UNRELEASED BOOKS - local preview"
+echo "  THE GILDED CODE - local preview"
 echo "  Running at $URL"
 echo "  Keep this window open while you browse. Press Ctrl+C to stop."
 echo ""

@@ -1,49 +1,29 @@
 /* ============================================================
-   Reduced motion
-   Loaded with media="(prefers-reduced-motion: reduce)" so these
-   rules only exist for visitors who ask for less motion.
-   Add ?motion=full to any page to preview the full motion layer
-   for the rest of the session (?motion=off clears it again).
+   Reduced motion — everything visible, nothing moving.
+   Loaded with media="(prefers-reduced-motion: reduce)".
    ============================================================ */
 
-html{scroll-behavior:auto}
-*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-
-.js .hero .eyebrow,
-.js .hero .eyebrow::before,
-.js .hero h1,
-.js .hero .byline,
-.js .hero .hook,
-.js .hero .blurb,
-.js .hero .price,
-.js .hero .hero-actions,
-.js .hero .addon,
-.js .hero .trust,
-.js .hero .cover-wrap,
-.js .hero .stamp,
-.js .hero .art-caption,
-.js .hero .scroll-cue,
-.js .hero::before,
-.js .cover-glow,
-.js .legal-main,
-.cart.open .cart-item,
-.btn-gold::after{animation:none!important}
-
-.announce-track{animation:none}
-.stamp{animation:none}
-.scroll-cue span{animation:none}
-.menu-nav a{opacity:1;transform:none;transition:none}
-::view-transition-old(root),::view-transition-new(root){animation:none}
-.book-card-art{transform:none!important}
-body{transition:none}
-html.is-leaving body{transform:none}
-
-/* keep a calm opacity fade so the page still feels alive,
-   but nothing moves, scales, parallaxes or shines */
-.reveal-ready [data-reveal]{
-  opacity:0;
-  transform:none!important;
-  transition:opacity .4s ease!important;
-  transition-delay:0ms!important;
+.js .titlepage-inner > *,
+.js .rule-orn::before,
+.js .rule-orn::after,
+.js .scroll-cue span,
+.js .book-art.is-in::after {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
-.reveal-ready [data-reveal].is-visible{opacity:1}
+
+.js .book-art::after { opacity: 0 !important; }
+
+.js [data-reveal],
+.js .book-art {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+  transition: none !important;
+}
+
+html { scroll-behavior: auto; }
+
+.book-art img { transition: none !important; }
+.book-art:hover img { transform: rotateY(-6deg) rotateX(1.5deg); }
