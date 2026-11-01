@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /pages/thanks.html
-
-Sitemap: https://unreleasedbooks.com/sitemap.xml
