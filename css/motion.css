@@ -49,8 +49,19 @@
 
 .js .scroll-cue span { animation: cue-drift 2.8s ease-in-out infinite; }
 
+/* ---------- eyebrow rules draw in with their label ---------- */
+.reveal-ready .eyebrow::before,
+.reveal-ready .eyebrow::after {
+  transform: scaleX(0);
+  transition: transform 0.9s var(--ease) 0.12s;
+}
+.reveal-ready .eyebrow::before { transform-origin: left; }
+.reveal-ready .eyebrow::after { transform-origin: right; }
+.reveal-ready .eyebrow.is-in::before,
+.reveal-ready .eyebrow.is-in::after { transform: scaleX(1); }
+
 /* ---------- quiet reveals ---------- */
-.js [data-reveal] {
+.reveal-ready [data-reveal] {
   opacity: 0;
   transform: translateY(20px);
   transition:
@@ -58,19 +69,19 @@
     transform 0.95s var(--ease);
   transition-delay: var(--d, 0ms);
 }
-.js [data-reveal].is-in {
+.reveal-ready [data-reveal].is-in {
   opacity: 1;
   transform: none;
 }
 
 /* ---------- the book unveils once ---------- */
-.js .book-art {
+.reveal-ready .book-art {
   clip-path: inset(0 0 100% 0);
   transition: clip-path 1.15s var(--ease);
 }
-.js .book-art.is-in { clip-path: inset(0 0 0 0); }
+.reveal-ready .book-art.is-in { clip-path: inset(0 0 0 0); }
 
-.js .book-art::after {
+.reveal-ready .book-art::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -85,7 +96,7 @@
   transform: translateX(-130%) skewX(-8deg);
   opacity: 0;
 }
-.js .book-art.is-in::after {
+.reveal-ready .book-art.is-in::after {
   animation: sweep 1.5s var(--ease) 0.55s both;
 }
 
@@ -101,15 +112,43 @@
   opacity: 1;
   transform: none;
 }
+.motion-off .ticker-track { animation: none !important; }
+.motion-off .eyebrow::before,
+.motion-off .eyebrow::after {
+  transform: none !important;
+  transition: none !important;
+}
 .motion-off .book-art::after {
   animation: none !important;
   opacity: 0;
   transform: none;
 }
+.motion-off .book-art img,
+.motion-off .book-art:hover img {
+  transform: none !important;
+  transition: none !important;
+}
+.motion-off .btn::after { display: none; }
+.motion-off .btn:hover { transform: none; }
+.motion-off .faq-a { transition: none !important; }
 .motion-off [data-reveal],
 .motion-off .book-art {
   opacity: 1 !important;
   transform: none !important;
   clip-path: none !important;
   transition: none !important;
+}
+
+/* ---------- print ---------- */
+@media print {
+  .reveal-ready [data-reveal],
+  .reveal-ready .book-art {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    animation: none !important;
+  }
+  .ticker,
+  .site-head,
+  .scroll-cue { display: none !important; }
 }

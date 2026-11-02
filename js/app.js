@@ -8,6 +8,7 @@
 
   var config = window.GC_CONFIG || {};
   var root = document.documentElement;
+  root.classList.add('reveal-ready');
   var $ = function (sel, scope) { return (scope || document).querySelector(sel); };
   var $$ = function (sel, scope) { return Array.prototype.slice.call((scope || document).querySelectorAll(sel)); };
 
@@ -59,6 +60,69 @@
       pairs.forEach(function (pair) { reveal(pair.mark); });
     }
   }
+
+  /* ---------- FAQ accordion ---------- */
+  /* Answers are visible in the markup; the script collapses them only
+     once it is running, so a blocked script never hides the content. */
+  var faqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function faqCalm() {
+    if (root.classList.contains('motion-off')) return true;
+    return faqReduce.matches && !root.classList.contains('motion-full');
+  }
+
+  $$('.faq-list').forEach(function (list) {
+    var items = $$('.faq-item', list);
+    list.classList.add('is-live');
+
+    function parts(item) {
+      return { q: $('.faq-q', item), panel: $('.faq-a', item) };
+    }
+
+    function close(item) {
+      var p = parts(item);
+      if (!p.q || !p.panel) return;
+      if (p.q.getAttribute('aria-expanded') !== 'true') return;
+      p.q.setAttribute('aria-expanded', 'false');
+      p.panel.inert = true;
+      if (faqCalm()) {
+        p.panel.style.height = '0px';
+        return;
+      }
+      p.panel.style.height = p.panel.scrollHeight + 'px';
+      void p.panel.offsetHeight;
+      p.panel.style.height = '0px';
+    }
+
+    function open(item) {
+      var p = parts(item);
+      if (!p.q || !p.panel) return;
+      p.q.setAttribute('aria-expanded', 'true');
+      p.panel.inert = false;
+      if (faqCalm()) {
+        p.panel.style.height = 'auto';
+        return;
+      }
+      p.panel.style.height = p.panel.scrollHeight + 'px';
+      p.panel.addEventListener('transitionend', function done(event) {
+        if (event.propertyName !== 'height') return;
+        p.panel.removeEventListener('transitionend', done);
+        if (p.q.getAttribute('aria-expanded') === 'true') p.panel.style.height = 'auto';
+      });
+    }
+
+    items.forEach(function (item) {
+      var p = parts(item);
+      if (!p.q || !p.panel) return;
+      p.panel.inert = true;
+
+      p.q.addEventListener('click', function () {
+        var isOpen = p.q.getAttribute('aria-expanded') === 'true';
+        items.forEach(function (other) { if (other !== item) close(other); });
+        if (isOpen) close(item);
+        else open(item);
+      });
+    });
+  });
 
   /* ---------- checkout ---------- */
   var dialog = $('#checkoutDialog');

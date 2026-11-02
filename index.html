@@ -30,10 +30,11 @@
 
 <link rel="preload" href="assets/fonts/bodoni-moda-400-900-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope-200-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/fonts.css?v=2026-11-01a">
-<link rel="stylesheet" href="css/styles.css?v=2026-11-01a">
-<link rel="stylesheet" href="css/motion.css?v=2026-11-01a">
-<link rel="stylesheet" href="css/motion-reduce.css?v=2026-11-01a" media="(prefers-reduced-motion: reduce)" id="motionReduce">
+<link rel="preload" href="assets/fonts/oswald-200-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css?v=2026-11-02e">
+<link rel="stylesheet" href="css/styles.css?v=2026-11-02e">
+<link rel="stylesheet" href="css/motion.css?v=2026-11-02e">
+<link rel="stylesheet" href="css/motion-reduce.css?v=2026-11-02e" media="(prefers-reduced-motion: reduce)" id="motionReduce">
 
 <script>
 (function () {
@@ -80,6 +81,42 @@
         "availability": "https://schema.org/InStock",
         "url": "https://ericc3473-afk.github.io/#buy"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ericc3473-afk.github.io/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is The Gilded Code about?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is about the pattern behind how wealth is built, protected and passed on, and how to read the people, rooms and situations where that pattern shows up." }
+        },
+        {
+          "@type": "Question",
+          "name": "What format is the book?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A PDF eBook. It opens on a phone, tablet, laptop or e-reader, and you can print it if you prefer paper." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get the book after paying?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Once checkout is live, you download it straight after paying. The confirmation page carries the link, and a copy goes to the email address you pay with." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I read it on my phone, tablet or e-reader?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is a standard PDF that opens in any reader, at any screen size." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if it is not for me?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Email within seven days of purchase and you get a full refund. You do not need to explain why." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is checkout secure?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Payments are handled by our checkout provider. Card details are entered on their page and never touch this site. Until the store is connected, the button shows a notice instead of charging you." }
+        }
+      ]
     }
   ]
 }
@@ -88,7 +125,29 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-set">
+      <span>The Gilded Code</span><i>&#9670;</i>
+      <span>Abundance by Design</span><i>&#9670;</i>
+      <span>Instant PDF download</span><i>&#9670;</i>
+      <span>Seven-day refund</span><i>&#9670;</i>
+    </div>
+    <div class="ticker-set">
+      <span>The Gilded Code</span><i>&#9670;</i>
+      <span>Abundance by Design</span><i>&#9670;</i>
+      <span>Instant PDF download</span><i>&#9670;</i>
+      <span>Seven-day refund</span><i>&#9670;</i>
+    </div>
+  </div>
+</div>
+
 <header class="site-head">
+  <nav class="head-nav" aria-label="Sections">
+    <a href="#book">The book</a>
+    <a href="#inside">Inside</a>
+    <a href="#faq">Questions</a>
+  </nav>
   <a class="brand" href="#top">The Gilded Code</a>
   <a class="head-cta" href="#buy">Get the book</a>
 </header>
@@ -110,6 +169,7 @@
   <section class="book" id="book">
     <div class="wrap book-grid">
       <div class="book-copy">
+        <p class="eyebrow" data-reveal>The book</p>
         <h2 data-reveal>The Gilded Code</h2>
         <p class="book-sub" data-reveal>Abundance by Design</p>
         <p class="book-author" data-reveal>Kael Varnow</p>
@@ -120,11 +180,38 @@
           <p data-reveal>The Gilded Code is about learning to see it.</p>
         </div>
 
-        <a class="btn" href="#buy" data-reveal>Get the book <span aria-hidden="true">·</span> $16.95</a>
+        <div class="buy-row" data-reveal>
+          <a class="btn" href="#buy">Get the book <span aria-hidden="true">·</span> $16.95</a>
+          <span class="buy-format">PDF eBook</span>
+        </div>
+
+        <ul class="trust" data-reveal>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5v9m0 0 3.4-3.4M10 11.5 6.6 8.1M3.5 13.5v2.2a1.8 1.8 0 0 0 1.8 1.8h9.4a1.8 1.8 0 0 0 1.8-1.8v-2.2"/></svg>
+            Instant download
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5 3.5 5v5c0 3.6 2.7 6.4 6.5 7.5 3.8-1.1 6.5-3.9 6.5-7.5V5L10 2.5Z"/><path d="m7.2 9.8 2 2 3.6-4"/></svg>
+            Seven-day refund
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="5" width="15" height="10" rx="1.6"/><path d="M2.5 8.5h15"/></svg>
+            One-time payment
+          </li>
+        </ul>
       </div>
 
       <figure class="book-art">
         <img src="assets/cover.jpg" alt="The Gilded Code by Kael Varnow — gilded engraved cover on charcoal" width="1200" height="1800" fetchpriority="high" decoding="async">
+        <figcaption class="seal" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <defs><path id="sealPath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+            <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="60" cy="60" r="37" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+            <text><textPath href="#sealPath" startOffset="2%">THE GILDED CODE · ABUNDANCE BY DESIGN · </textPath></text>
+            <path d="M60 51.5 62.3 57.7 68.5 60 62.3 62.3 60 68.5 57.7 62.3 51.5 60 57.7 57.7Z" fill="currentColor"/>
+          </svg>
+        </figcaption>
       </figure>
     </div>
   </section>
@@ -137,22 +224,136 @@
     </div>
   </section>
 
-  <section class="inside" aria-labelledby="inside-title">
+  <section class="inside" id="inside" aria-labelledby="inside-title">
     <div class="wrap">
-      <h2 id="inside-title" data-reveal>Inside, you’ll discover</h2>
+      <div class="sec-head">
+        <p class="eyebrow" data-reveal>Inside the book</p>
+        <h2 id="inside-title" data-reveal>Inside, you’ll discover</h2>
+      </div>
 
-      <div class="inside-grid">
-        <ul class="discover">
-          <li data-reveal>The recurring patterns behind how wealth is built, protected and passed on</li>
-          <li data-reveal>Why the most important moves are the ones nobody announces</li>
-          <li data-reveal>How to read people, rooms and situations the way insiders do</li>
-          <li data-reveal>The quiet habits that separate those who rise from those who stay in place</li>
-          <li data-reveal>How to turn what you now see into a life of abundance you design for yourself</li>
-        </ul>
+      <ol class="chapter-grid">
+        <li class="chapter" data-reveal>
+          <span class="chapter-num" aria-hidden="true">I</span>
+          <h3>The pattern</h3>
+          <p>The recurring patterns behind how wealth is built, protected and passed on</p>
+        </li>
+        <li class="chapter" data-reveal>
+          <span class="chapter-num" aria-hidden="true">II</span>
+          <h3>The quiet move</h3>
+          <p>Why the most important moves are the ones nobody announces</p>
+        </li>
+        <li class="chapter" data-reveal>
+          <span class="chapter-num" aria-hidden="true">III</span>
+          <h3>The room</h3>
+          <p>How to read people, rooms and situations the way insiders do</p>
+        </li>
+        <li class="chapter" data-reveal>
+          <span class="chapter-num" aria-hidden="true">IV</span>
+          <h3>The habit</h3>
+          <p>The quiet habits that separate those who rise from those who stay in place</p>
+        </li>
+        <li class="chapter" data-reveal>
+          <span class="chapter-num" aria-hidden="true">V</span>
+          <h3>The design</h3>
+          <p>How to turn what you now see into a life of abundance you design for yourself</p>
+        </li>
+        <li class="chapter chapter-buy" data-reveal>
+          <p class="chapter-buy-line">The whole code, in one sitting.</p>
+          <a class="btn btn-ghost" href="#buy">Get the book <span aria-hidden="true">·</span> $16.95</a>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-        <div class="inside-aside">
-          <blockquote class="pull" data-reveal>This book won’t tell you what to chase. It will change what you notice.</blockquote>
-          <p class="closing-line" data-reveal>Some people spend a lifetime looking. A few learn how to see.</p>
+  <section class="quote-band" aria-labelledby="quote-title">
+    <div class="wrap narrow">
+      <h2 class="visually-hidden" id="quote-title">From the book</h2>
+      <span class="quote-mark" aria-hidden="true">
+        <svg viewBox="0 0 18 18"><path d="M9 1.2 14 9l-5 7.8L4 9l5-7.8Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="9" cy="9" r="1.5" fill="currentColor"/></svg>
+      </span>
+      <blockquote class="pull" data-reveal>This book won’t tell you what to chase. It will change what you notice.</blockquote>
+      <p class="closing-line" data-reveal>Some people spend a lifetime looking. A few learn how to see.</p>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-wrap">
+      <div class="sec-head sec-head-center">
+        <p class="eyebrow" data-reveal>Before you buy</p>
+        <h2 id="faq-title" data-reveal>Questions &amp; answers</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item" data-reveal>
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              <span>What is The Gilded Code about?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1">
+            <p>It is about the pattern behind how wealth is built, protected and passed on, and how to read the people, rooms and situations where that pattern shows up.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-reveal>
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              <span>What format is the book?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            <p>A PDF eBook. It opens on a phone, tablet, laptop or e-reader, and you can print it if you prefer paper.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-reveal>
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              <span>How do I get the book after paying?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <p>Once checkout is live, you download it straight after paying. The confirmation page carries the link, and a copy goes to the email address you pay with.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-reveal>
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              <span>Can I read it on my phone, tablet or e-reader?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <p>Yes. It is a standard PDF that opens in any reader, at any screen size.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-reveal>
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              <span>What if it is not for me?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            <p>Email within seven days of purchase and you get a full refund. You do not need to explain why. <a href="pages/refund.html">Read the refund policy</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-reveal>
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+              <span>Is checkout secure?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6">
+            <p>Payments are handled by our checkout provider. Card details are entered on their page and never touch this site. Until the store is connected, the button shows a notice instead of charging you.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -160,7 +361,8 @@
 
   <section class="buy" id="buy" aria-labelledby="buy-title">
     <div class="wrap narrow">
-      <p class="buy-title" id="buy-title" data-reveal>Crack the code. Design the life.</p>
+      <p class="eyebrow" data-reveal>The last page</p>
+      <h2 class="buy-title" id="buy-title" data-reveal>Crack the code.<br>Design the life.</h2>
 
       <div class="price" data-reveal>
         <strong>$16.95</strong>
@@ -169,6 +371,21 @@
 
       <button class="btn btn-lg" id="buyBtn" type="button" data-reveal>Get the book</button>
       <p class="buy-note" id="buyNote" role="status"></p>
+
+      <ul class="trust trust-center" data-reveal>
+        <li>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5v9m0 0 3.4-3.4M10 11.5 6.6 8.1M3.5 13.5v2.2a1.8 1.8 0 0 0 1.8 1.8h9.4a1.8 1.8 0 0 0 1.8-1.8v-2.2"/></svg>
+          Instant download
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5 3.5 5v5c0 3.6 2.7 6.4 6.5 7.5 3.8-1.1 6.5-3.9 6.5-7.5V5L10 2.5Z"/><path d="m7.2 9.8 2 2 3.6-4"/></svg>
+          <a href="pages/refund.html">Seven-day refund</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="5" width="15" height="10" rx="1.6"/><path d="M2.5 8.5h15"/></svg>
+          One-time payment
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -200,8 +417,8 @@
   </div>
 </dialog>
 
-<script src="js/config.js?v=2026-11-01a"></script>
-<script src="js/app.js?v=2026-11-01a"></script>
-<script src="js/motion.js?v=2026-11-01a"></script>
+<script src="js/config.js?v=2026-11-02e"></script>
+<script src="js/app.js?v=2026-11-02e"></script>
+<script src="js/motion.js?v=2026-11-02e"></script>
 </body>
 </html>

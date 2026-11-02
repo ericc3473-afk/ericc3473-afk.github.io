@@ -26,7 +26,7 @@ The checkout stays in its honest "not connected" state, so a friend can read eve
 
 ```
 .
-├── index.html              # The whole storefront: title page, book, author, contents, buy
+├── index.html              # The whole storefront: title page, book, author, chapters, quote, FAQ, buy
 ├── 404.html                # Not-found page
 ├── robots.txt              # Crawl rules + sitemap pointer
 ├── sitemap.xml             # Indexable pages
@@ -38,11 +38,11 @@ The checkout stays in its honest "not connected" state, so a friend can read eve
 ├── css/
 │   ├── fonts.css           # Self-hosted @font-face rules (latin subset)
 │   ├── styles.css          # Design system, layout, components, responsive rules
-│   ├── motion.css          # Title-page entrance, cover unveil, scroll reveals
+│   ├── motion.css          # Title-page entrance, cover unveil, scroll reveals, print
 │   └── motion-reduce.css   # Reduced-motion overrides (media-scoped)
 ├── js/
 │   ├── config.js           # Checkout, support email, price — edit this first
-│   ├── app.js              # Header state, reveals, checkout hand-off, dialog
+│   ├── app.js              # Header state, reveals, FAQ accordion, checkout hand-off, dialog
 │   └── motion.js           # Cover tilt + reveal stagger (pointer devices only)
 ├── pages/
 │   ├── thanks.html         # Post-checkout instructions (noindex)
@@ -61,7 +61,7 @@ The checkout stays in its honest "not connected" state, so a friend can read eve
 │   ├── apple-touch-icon.png
 │   ├── favicon-32.png
 │   ├── favicon.svg
-│   └── fonts/              # Bodoni Moda + Manrope (woff2, latin)
+│   └── fonts/              # Bodoni Moda, Manrope and Oswald (woff2, latin)
 └── README.md
 ```
 
@@ -91,30 +91,34 @@ Only `https:` URLs are accepted; anything else falls back to the dialog. Do not 
 
 ### After editing
 
-Bump the `?v=` token on local CSS/JS links (currently `?v=2026-11-01a`) so returning visitors do not keep a stale cached copy.
+Bump the `?v=` token on local CSS/JS links (currently `?v=2026-11-02e`) so returning visitors do not keep a stale cached copy.
 
 ## SEO and launch plumbing
 
-- `index.html` carries JSON-LD `@graph` with `WebSite` and `Book` (author, format, price, availability).
+- `index.html` carries JSON-LD `@graph` with `WebSite`, `Book` (author, format, price, availability) and `FAQPage` matching the visible questions.
 - `sitemap.xml`, `robots.txt`, `404.html`, `manifest.webmanifest` and the icon set are in place.
 - `pages/thanks.html` is `noindex` and explains post-purchase next steps without pretending to take payment.
 
 ## The design
 
-A gilded engraved bookplate: charcoal ground, antique gold rules and a Didone display face.
+A gilded bookplate crossed with a rare-books catalogue: charcoal ground, antique gold rules, oxblood marks, and a Didone voice for the book set against a condensed grotesque for the shop.
 
-- **Bodoni Moda** for display type
+- **Bodoni Moda** for display type and the book's voice
 - **Manrope** for body copy
+- **Oswald** for eyebrows, ticker, chapter titles, FAQ questions, buttons and small labels
 
-Both are self-hosted in `assets/fonts/` (latin subset) and loaded through `css/fonts.css`. There are no Google Fonts requests at runtime.
+All three are self-hosted in `assets/fonts/` (latin subset) and loaded through `css/fonts.css`. There are no Google Fonts requests at runtime.
 
 The page is built as a sequence of printed leaves:
 
-1. **Title page** — full-height, the title above, a scroll cue.
-2. **The book** — the cover on the right, title, author and the opening description on the left; the cover stays in view as the copy scrolls.
-3. **The author** — a short bio under a gold monogram.
-4. **Inside, you'll discover** — the five promises as a ruled list, with the pull quote and closing line beside it.
-5. **Buy** — price, one button, and an honest note about the state of checkout.
+1. **Ticker** — a slow marquee of title, format and guarantee in oxblood and gold.
+2. **Title page** — full-height, the title above, a scroll cue.
+3. **The book** — the cover on the right, title, author and the opening description on the left; the cover stays in view as the copy scrolls, with an engraved seal at its corner.
+4. **The author** — a short bio under a gold monogram.
+5. **Inside, you'll discover** — the five promises as a bordered, numbered card grid, with a sixth card for the direct purchase.
+6. **From the book** — the pull quote and closing line on a centred band.
+7. **Questions & answers** — six-item accordion covering format, delivery, refunds and checkout.
+8. **Buy** — price, one button, and an honest note about the state of checkout.
 
 The cover is authored as SVG in `tools/cover.html`: an engraved rosette, gilt frame, corner flourishes and Didone lettering, rasterised to `assets/cover.jpg`.
 
@@ -124,10 +128,12 @@ Motion lives in a separate, optional layer (`css/motion.css` + `js/motion.js`) s
 
 - A single authored entrance on the title page: the ornament rule draws, the title, subtitle, byline and scroll cue rise in sequence
 - The cover unveils once with a clip-path wipe and a gold sweep as it enters the viewport
-- Quiet staggered reveals for the copy, list and pull quote
+- Quiet staggered reveals for the copy, card grid, quote and FAQ rows
+- Eyebrow rules draw in from the edge as each label arrives
+- The FAQ opens and closes on an animated height, with the icon rotating to a cross
 - A gentle 3D tilt on the cover under a fine pointer
 
-Everything is disabled under `prefers-reduced-motion: reduce`; `css/motion-reduce.css` is loaded with `media="(prefers-reduced-motion: reduce)"`, so visitors who ask for less motion never download the choreography. Reduced motion keeps every element visible — nothing is left clipped or faded.
+Everything is disabled under `prefers-reduced-motion: reduce`; `css/motion-reduce.css` is loaded with `media="(prefers-reduced-motion: reduce)"`, so visitors who ask for less motion never download the choreography. Reduced motion keeps every element visible — nothing is left clipped or faded — and the FAQ switches instantly. The FAQ answers are also fully visible when JavaScript is blocked, because the script only collapses them once it is running. Print styles reveal everything and drop the ticker and header.
 
 ### Previewing the motion on a machine with animations off
 
@@ -141,11 +147,12 @@ It adds `motion-full` to `<html>` and disables the reduced-motion stylesheet. `?
 
 ## What works
 
-- Responsive layout verified at 320, 360, 390, 768 and 1440 px with no horizontal overflow
-- Sticky header with a "Get the book" link, and the cover staying in view beside the copy
+- Responsive layout verified at 320, 360, 390, 768, 1366 and 1440 px with no horizontal overflow
+- Sticky header with section links and a "Get the book" CTA, and the cover staying in view beside the copy
+- FAQ accordion with keyboard-operable buttons, `aria-expanded`/`aria-controls`, and content that survives a blocked script
 - Hosted-checkout routing with an honest fallback dialog
 - Keyboard support: Escape closes the dialog, focus is trapped inside it, the close button takes focus on open
-- Skip link, landmarks, alt text and AA contrast throughout
+- Skip link, landmarks, alt text and AA contrast throughout; Lighthouse 100 for accessibility, best practices and SEO
 - Reduced-motion support, plus `?motion=full` / `?motion=off`
 - Self-hosted fonts, social card, icons and manifest
 - SEO metadata, Open Graph/Twitter tags, JSON-LD, sitemap, robots and a 404 page
@@ -167,4 +174,4 @@ It adds `motion-full` to `<html>` and disables the reduced-motion stylesheet. `?
 - The cover in `assets/` is custom artwork created for this build. Replace it with the final cover at the same 2:3 ratio if needed, then regenerate `assets/og.jpg`.
 - The price shown is `$16.95` for the PDF eBook, set in both `js/config.js` and the visible markup.
 - The checkout fallback is deliberate until a real provider link exists; everything else is front-end complete.
-- Local CSS and JS are linked with `?v=2026-11-01a`. Bump that token whenever you deploy a change.
+- Local CSS and JS are linked with `?v=2026-11-02e`. Bump that token whenever you deploy a change.

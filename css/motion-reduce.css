@@ -1,29 +1,51 @@
 /* ============================================================
    Reduced motion — everything visible, nothing moving.
    Loaded with media="(prefers-reduced-motion: reduce)".
+   The ?motion=full preview switches this sheet off.
    ============================================================ */
 
 .js .titlepage-inner > *,
 .js .rule-orn::before,
 .js .rule-orn::after,
 .js .scroll-cue span,
-.js .book-art.is-in::after {
+.reveal-ready .book-art.is-in::after {
   animation: none !important;
   opacity: 1 !important;
   transform: none !important;
 }
 
-.js .book-art::after { opacity: 0 !important; }
+.reveal-ready .book-art::after { opacity: 0 !important; }
 
-.js [data-reveal],
-.js .book-art {
+.reveal-ready [data-reveal],
+.reveal-ready .book-art {
   opacity: 1 !important;
   transform: none !important;
   clip-path: none !important;
   transition: none !important;
 }
 
+/* the eyebrow rules are already drawn, not animating */
+.reveal-ready .eyebrow::before,
+.reveal-ready .eyebrow::after {
+  transform: none !important;
+  transition: none !important;
+}
+
+.ticker-track {
+  animation: none !important;
+  transform: none !important;
+}
+
 html { scroll-behavior: auto; }
 
-.book-art img { transition: none !important; }
-.book-art:hover img { transform: rotateY(-6deg) rotateX(1.5deg); }
+.book-art img,
+.book-art:hover img {
+  transform: none !important;
+  transition: none !important;
+}
+
+.btn { transition: none !important; }
+.btn::after { display: none !important; }
+.btn:hover { transform: none; }
+
+.faq-a { transition: none !important; }
